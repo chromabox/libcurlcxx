@@ -1,7 +1,7 @@
 #!/bin/bash
 
 clear
-cpplint --recursive src/ include/ test/
+cpplint --recursive src/ include/ sample/
 retval=$?
 if [ $retval -eq 0 ]
 then
