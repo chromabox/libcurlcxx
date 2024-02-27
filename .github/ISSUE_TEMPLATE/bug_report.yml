@@ -1,0 +1,51 @@
+name: Bug Report
+description: File a bug report
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        このバグレポートにご記入いただきありがとうございます
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: 何が発生しましたか？
+      description: または、何が起こると予想していたかも教えてください
+      placeholder: Tell us what you see!
+      value: "A bug happened!"
+    validations:
+      required: true
+  - type: textarea
+    id: enviroment
+    attributes:
+      label: 使用環境
+      description: 具体的な使用環境を教えてください。OSのバージョンなどやハードウェア構成などです。できるだけ詳しくお願いします
+      value: "OS version: "
+    validations:
+      required: true
+  - type: dropdown
+    id: version
+    attributes:
+      label: バージョン
+      description: どのバージョンで発生しましたか?
+      options:
+        - 0.1.0
+        - dev
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: 関連する情報など
+      description: 関連するログ出力、その他情報をコピーして貼り付けてください。これは自動的にフォーマットされるため、バッククォートの必要はありません
+      render: shell
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: 行動規範
+      description: この問題を送信すると、プロジェクトの [行動規範](https://example.com)に同意したことになります
+      options:
+        - label: このプロジェクトの行動規範に従うことを同意します
+          required: true

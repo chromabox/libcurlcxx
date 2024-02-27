@@ -1,0 +1,33 @@
+{
+    "configurations": [
+        {
+            "name": "main",
+            "defines": [
+                "DEBUG",
+                "PICOJSON_USE_INT64"
+            ],
+            "compilerArgs": [
+                "-std=gnu++20"
+            ],
+            "includePath": [
+                "./extlibs/curl/include",
+                "./include/base",
+                "./include/http",
+                "./include/ext",
+                "./include",
+                "./sample"
+            ],
+            "cppStandard": "${default}",
+            "intelliSenseMode": "${default}",
+            "browse": {
+                "databaseFilename": "${workspaceFolder}/.vscode/browse.out",
+                "limitSymbolsToIncludedHeaders": false,
+                "path": [
+                    "${workspaceFolder}"
+                ]
+            },
+            "compilerPath": "/usr/bin/gcc"
+        }
+    ],
+    "version": 4
+}

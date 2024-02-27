@@ -1,0 +1,3 @@
+[submodule "extlibs/curl"]
+	path = extlibs/curl
+	url = https://github.com/curl/curl.git

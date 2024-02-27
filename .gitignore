@@ -30,3 +30,12 @@
 *.exe
 *.out
 *.app
+
+build/
+build_release/
+browse.out*
+BROWSE.OUT*
+.vscode/settings.json
+
+test/openai_apikeys.h
+test/apikeys.mk

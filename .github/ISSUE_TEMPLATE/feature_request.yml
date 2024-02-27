@@ -1,0 +1,28 @@
+name: Feature request
+description: Suggest an idea for this project
+title: "[Feature Request]: "
+labels: ["enhancement"]
+body:
+  - type: checkboxes
+    attributes:
+      label: 提案される機能リクエストに関する既存の提案は無いか確認しましたか？
+      description: 最近のビルド・コミットに実装されていないかも検索してください。
+      options:
+        - label: 既存の提案を検索し、最近のビルド・コミットを確認しました
+          required: true
+  - type: markdown
+    attributes:
+      value: |
+        *このフォームにできるだけ多くの情報を記入し、可能であれば機能のイラスト等も添えてください*
+  - type: textarea
+    id: feature
+    attributes:
+      label: 提案された機能はどのような効果を及ぼし、改善が期待できそうですか
+      description: 提案された機能について非常に明確かつ簡単な方法で説明し、それによってどのような改善が期待できそうかを教えてください
+    validations:
+      required: true
+  - type: textarea
+    id: misc
+    attributes:
+      label: 追加情報
+      description: 機能リクエストに関するその他の情報やイラストなどがあればここに追加してください

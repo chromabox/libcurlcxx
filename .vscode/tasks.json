@@ -1,0 +1,135 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "debug library build",
+            "detail": "build debug (library only)",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "./build.sh",
+                "--debug"
+            ],
+            "group" : "build",
+            "problemMatcher": [
+                "$gcc"
+            ],
+			"presentation": {
+                "panel": "shared",
+				"reveal": "always",  // Terminal パネルを必ず開く
+				"clear": true,       // 実行前に Terminal をクリア
+				"echo": false        // タスク名をエコー表示しない
+			},			
+        },
+        {
+            "label": "debug library with sample build",
+            "detail": "build debug (library and samples)",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "./build.sh",
+                "--debugsample"
+            ],
+            "group" : "build",
+            "problemMatcher": [
+                "$gcc"
+            ],
+			"presentation": {
+                "panel": "shared",
+				"reveal": "always",  // Terminal パネルを必ず開く
+				"clear": true,       // 実行前に Terminal をクリア
+				"echo": false        // タスク名をエコー表示しない
+			},			
+        },
+        {
+            "label": "relese library build",
+            "detail": "build release (library only)",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "./build.sh",
+                "--release"
+            ],
+            "group" : "build",
+            "problemMatcher": [
+                "$gcc"
+            ],
+			"presentation": {
+                "panel": "shared",
+				"reveal": "always",  // Terminal パネルを必ず開く
+				"clear": true,       // 実行前に Terminal をクリア
+				"echo": false        // タスク名をエコー表示しない
+			},			
+        },
+        {
+            "label": "relese library with sample build",
+            "detail": "build release (library and samples)",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "./build.sh",
+                "--releasesample"
+            ],
+            "group" : "build",
+            "problemMatcher": [
+                "$gcc"
+            ],
+			"presentation": {
+                "panel": "shared",
+				"reveal": "always",  // Terminal パネルを必ず開く
+				"clear": true,       // 実行前に Terminal をクリア
+				"echo": false        // タスク名をエコー表示しない
+			},			
+        },
+        {
+            "label": "clean",
+            "detail": "cleanup all objects",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "./build.sh",
+                "--clean"
+            ],
+            "group" : "build",
+            "problemMatcher": [
+                "$gcc"
+            ],
+			"presentation": {
+                "panel": "shared",
+				"reveal": "always",  // Terminal パネルを必ず開く
+				"clear": true,       // 実行前に Terminal をクリア
+				"echo": false        // タスク名をエコー表示しない
+			},
+        },
+        {
+            "label": "code check",
+            "detail": "code check by cpplint",
+            "type": "process",
+            "command": "bash",
+            "args": [
+                "./exec_linter.sh"
+            ],
+            "group" : "build",
+            "problemMatcher": {
+                "owner":"cpp",
+                "fileLocation":["relative","${workspaceFolder}"],
+                "severity": "warning",
+                "pattern":{
+                "regexp": "^(.*?):(.*?):(.*?)$",
+                    "file": 1,
+                    "line": 2,
+                    "message": 3
+                }
+            },
+
+			"presentation": {
+                "panel": "shared",
+				"reveal": "always",  // Terminal パネルを必ず開く
+				"clear": true,       // 実行前に Terminal をクリア
+				"echo": false        // タスク名をエコー表示しない
+			},			            
+        },
+    ]
+}
