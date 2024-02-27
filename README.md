@@ -249,6 +249,9 @@ https://github.com/chromabox/libcurlcxx/blob/master/.github/CONTRIBUTING.md
 
 ---
 ## 更新履歴:
+* 2024/02/27 : 0.1.0  
+初リリースバージョン
+
 * 2024/02/XX : 0.0.9  
 プレバージョン
 
