@@ -30,7 +30,6 @@ set(LIBCURLCXX_INC_DIRS
   include
   include/base
   include/ext
-  include/http
 )
 
 set(LIBCURLCXX_SRC_FILES
@@ -42,7 +41,7 @@ set(LIBCURLCXX_SRC_FILES
   src/base/curlcxx_slist.cpp
   src/base/curlcxx_stream.cpp
   src/base/curlcxx_utility.cpp
-  src/http/curlcxx_http_req.cpp
+  src/ext/curlcxx_http_req.cpp
 )
 
 

@@ -12,7 +12,6 @@
             "includePath": [
                 "./extlibs/curl/include",
                 "./include/base",
-                "./include/http",
                 "./include/ext",
                 "./include",
                 "./sample"
