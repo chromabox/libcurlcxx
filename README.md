@@ -251,6 +251,11 @@ https://github.com/chromabox/libcurlcxx/blob/master/.github/CONTRIBUTING.md
 
 ---
 ## 更新履歴:
+* 2024/02/28 : 0.1.1  
+軽微な変更  
+  * コーディング規約にあっていないものを修正
+  * CodeFactorバッチの追加
+
 * 2024/02/27 : 0.1.0  
 初リリースバージョン
 
