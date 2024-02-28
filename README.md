@@ -1,5 +1,7 @@
 # libcurlcxx
-
+  
+[![CodeFactor](https://www.codefactor.io/repository/github/chromabox/libcurlcxx/badge)](https://www.codefactor.io/repository/github/chromabox/libcurlcxx)  
+  
 クライアントサイドURL転送ライブラリの`cURL(libcURL)`をmodern C++でラッピングしたライブラリです  
 あまり深く考えなくても簡単に、しかし軽めにHttp(s)通信を扱うというのをコンセプトにしています  
 CURLで使われるハンドルをスマートポインタで包むことによってオブジェクトのスコープor参照から外れると安全に解放できるようにしています。  
