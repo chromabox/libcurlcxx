@@ -27,8 +27,8 @@
 // バージョン番号を明記
 // CURLの慣習に従っている
 #define LIBCURLCXX_VERSION_MAJOR 0
-#define LIBCURLCXX_VERSION_MINOR 1
-#define LIBCURLCXX_VERSION_PATCH 1
+#define LIBCURLCXX_VERSION_MINOR 2
+#define LIBCURLCXX_VERSION_PATCH 0
 
 // バージョン番号その２
 // CURLの慣習に従っている
@@ -36,4 +36,4 @@
 // XX=メジャー
 // YY=マイナー
 // ZZ=パッチ
-#define LIBCURLCXX_VERSION_NUM 0x000101
+#define LIBCURLCXX_VERSION_NUM 0x000200

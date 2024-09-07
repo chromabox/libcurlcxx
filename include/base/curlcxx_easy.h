@@ -73,6 +73,7 @@ namespace libcurlcxx
 		std::string				url;		// 設定したURL
 		std::shared_ptr<curl_base_mime>	mime;  // 設定したmime
 		std::shared_ptr<curl_base_stream_object>	streamer;  // 設定したstreamer
+		long int				connect_timeout;		// 接続タイムアウト秒数(デフォルトは300秒＝CURLのデフォルトと同じ)
 
 		void									*prog_data;	   // progress用データ
 		curl_base_easy_progress_callback         prog_callbk;  // progressを使うときに呼ばれるコールバック関数
@@ -135,6 +136,16 @@ namespace libcurlcxx
 
 		inline CURLcode set_debug_callback(curl_debug_callback param) noexcept 			{return curl_easy_setopt(handle.get(), CURLOPT_DEBUGFUNCTION, param);};
 
+		// 接続タイムアウト時間を設定(接続が失敗とみなされるまでの秒数を設定)
+		// タイムアウトまでの時間は、名前解決 (DNS) と、リモート側との接続が確立されるまでのすべてのプロトコルハンドシェイクとネゴシエーションの時間が含まれる
+		// 実データの送受信時間は含まれない
+		// touttimeを0に設定するとデフォルトの300秒となる
+		inline void set_connect_timeout(long int touttime)
+		{
+			if(touttime == 0) touttime = 300;
+			connect_timeout = touttime;
+			set_option(CURLOPT_CONNECTTIMEOUT, connect_timeout);
+		}
 
 		// curl_easy_setoptで設定したオプションのクリア。実際にはnullptrをセットする
 		inline CURLcode clear_option(CURLoption option) noexcept 				{return curl_easy_setopt(handle.get(), option, nullptr);};
@@ -147,6 +158,11 @@ namespace libcurlcxx
 			CURLcode ret = curl_easy_getinfo(handle.get(), info, &ptr);
 			if(ptr != nullptr) rparam = ptr;
 			return ret;
+		}
+
+		// 接続タイムアウト時間を返す(接続が失敗とみなされるまでの秒数)
+		inline long int get_connect_timeout() const {
+			return connect_timeout;
 		}
 
 		// CURLの生ハンドルを取得する

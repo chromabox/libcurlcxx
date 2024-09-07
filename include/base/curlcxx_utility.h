@@ -85,7 +85,8 @@ namespace libcurlcxx
 		static std::string url_from_scheme(std::string_view url){
 			return _url_match_regex(url, 2);
 		}
-		// urlから"google.com"のサーバを示す文字を取得
+		// urlから"google.com"のサーバ(とポート番号があればポート番号)を示す文字を取得
+		// サーバー名だけが欲しい場合はurl_from_servernameを使うこと
 		static std::string url_from_authority(std::string_view url){
 			return _url_match_regex(url, 4);
 		}
@@ -111,6 +112,15 @@ namespace libcurlcxx
 				return fpath.substr(found + 1);
 			}
 			return fpath;		// セパレータがない場合はファイル名だけを返す。これでよいはず
+		}
+		// urlからサーバ名だけを取得。ポート名も欲しい場合はurl_from_authorityを使うこと
+		static std::string url_from_servername(std::string_view url){
+			std::string authority = curl_base_utility::url_from_authority(url);
+			size_t colonPos = authority.find(':');
+			if(colonPos != std::string::npos) {
+				return authority.substr(0, colonPos);
+			}
+			return authority;		// ":"が見つからん場合はそのまま返す
 		}
 
 		static unsigned int get_curl_version_number() noexcept;

@@ -50,6 +50,7 @@ curl_base_easy::curl_base_easy()
 	handle.reset(p);
 	prog_callbk = nullptr;
 	prog_data = nullptr;
+	connect_timeout = 300;
 }
 
 // デストラクタ
@@ -71,6 +72,7 @@ curl_base_easy::curl_base_easy(const std::shared_ptr<curl_base_stream_object> &_
 	set_streamer(_streamer);
 	prog_callbk = nullptr;
 	prog_data = nullptr;
+	connect_timeout = 300;
 }
 
 // ムーブコンストラクタ
@@ -82,6 +84,7 @@ curl_base_easy::curl_base_easy(curl_base_easy &&other) noexcept
 	url = std::move(other.url);
 	prog_callbk = other.prog_callbk;
 	prog_data = other.prog_data;
+	connect_timeout = other.connect_timeout;
 }
 
 // ムーブ代入演算子
@@ -94,6 +97,7 @@ curl_base_easy & curl_base_easy::operator= (curl_base_easy &&other) noexcept
 		url = std::move(other.url);
 		prog_callbk = other.prog_callbk;
 		prog_data = other.prog_data;
+		connect_timeout = other.connect_timeout;
 	}
 	return *this;
 }

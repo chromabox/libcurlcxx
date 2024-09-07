@@ -32,7 +32,6 @@ using libcurlcxx::curl_multi_unique_handle;
 using libcurlcxx::curl_base_easy;
 using libcurlcxx::curl_base_exception;
 
-using std::vector;
 using std::unique_ptr;
 using std::weak_ptr;
 using std::shared_ptr;
