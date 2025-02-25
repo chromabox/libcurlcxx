@@ -235,7 +235,7 @@ target_link_libraries(sample PRIVATE curlcxx )
 
 ---
 ## TODO:  
-* web socket対応したい  
+* web socket対応したい(send)  
 * cookie関連の実装をする  
 * windows対応
 * 完全には無理だけどできるだけヘッダに実装を持ってくる(リファクタリング)
@@ -251,6 +251,10 @@ https://github.com/chromabox/libcurlcxx/blob/master/.github/CONTRIBUTING.md
 
 ---
 ## 更新履歴:
+* 2025/02/25 : 0.3.0  
+  * curlのバージョンを8.12.1に変更
+  * curl_websocketクラスの作成。websocket(recv)への対応  
+
 * 2024/09/07 : 0.2.0  
   * curlのバージョンを8.9.1に変更
   * ubuntu 24.04.1での動作確認OK
