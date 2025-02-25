@@ -45,6 +45,7 @@ set(LIBCURLCXX_SRC_FILES
   src/base/curlcxx_stream.cpp
   src/base/curlcxx_utility.cpp
   src/ext/curlcxx_http_req.cpp
+  src/ext/curlcxx_websocket.cpp
 )
 
 
