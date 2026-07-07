@@ -251,6 +251,9 @@ https://github.com/chromabox/libcurlcxx/blob/master/.github/CONTRIBUTING.md
 
 ---
 ## 更新履歴:
+* 2026/07/07 : 0.3.1  
+  * curl_websocketクラスでコンストラクタの初期化ミスとcloseのミスを修正  
+
 * 2025/02/25 : 0.3.0  
   * curlのバージョンを8.12.1に変更
   * curl_websocketクラスの作成。websocket(recv)への対応  
