@@ -81,6 +81,9 @@ curl_websocket::~curl_websocket() noexcept
 curl_websocket::curl_websocket(std::string_view url)
 		: curl_base_easy()
 {
+	isconnected = false;
+	sendrecv_debug = false;
+	internal_rbufsize = CURLCXX_WEBSOCK_BUFSIZE;
 	RequestSetupGet(url);
 }
 
@@ -90,6 +93,9 @@ curl_websocket::curl_websocket(std::string_view url)
 curl_websocket::curl_websocket(std::string_view url, const curl_http_request_param& params)
 		: curl_base_easy()
 {
+	isconnected = false;
+	sendrecv_debug = false;
+	internal_rbufsize = CURLCXX_WEBSOCK_BUFSIZE;
 	RequestSetupGet(url, params);
 }
 
@@ -130,6 +136,7 @@ void curl_websocket::close()
 	if(!isConnection()) return;
 	size_t sent;
 	curl_ws_send(handle.get(), "", 0, &sent, 0, CURLWS_CLOSE);
+	isconnected = false;
 }
 
 // HTTP用getパラメータでURLとともに設定する文字列をcurl_http_request_paramから構築して文字列型で返す
